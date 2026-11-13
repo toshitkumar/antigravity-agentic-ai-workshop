@@ -10,7 +10,8 @@ import {
   MoonIcon,
   MenuIcon,
   CloseIcon,
-  ArrowRightIcon
+  ArrowRightIcon,
+  SparklesIcon
 } from './Icons';
 
 export default function Navbar({ theme, toggleTheme }) {
@@ -18,11 +19,13 @@ export default function Navbar({ theme, toggleTheme }) {
   const [activeSection, setActiveSection] = useState('hero');
 
   const navItems = [
-    { id: 'schedule', label: '2-Day Agenda', Icon: CalendarIcon },
-    { id: 'prompts', label: 'Prompt Hub', Icon: ZapIcon },
-    { id: 'preview', label: 'Live Capstone', Icon: RocketIcon },
-    { id: 'bughunter', label: 'Bug Hunter', Icon: BugIcon },
-    { id: 'grader', label: '100-Mark Rubric', Icon: ChartIcon },
+    { id: 'concepts', label: 'Architecture', Icon: SparklesIcon },
+    { id: 'simulator', label: 'Simulator', Icon: RocketIcon },
+    { id: 'promptbuilder', label: 'Prompt Lab', Icon: ZapIcon },
+    { id: 'schedule', label: '2-Day Modules', Icon: CalendarIcon },
+    { id: 'preview', label: 'Live Capstone', Icon: SparklesIcon },
+    { id: 'bughunter', label: 'Debugging', Icon: BugIcon },
+    { id: 'grader', label: 'Hackathon Rubric', Icon: ChartIcon },
     { id: 'deploy', label: 'GitHub Deploy', Icon: GithubIcon },
   ];
 
@@ -39,7 +42,6 @@ export default function Navbar({ theme, toggleTheme }) {
     }
   };
 
-  // ScrollSpy: highlight nav item as user scrolls
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 120;
@@ -78,9 +80,9 @@ export default function Navbar({ theme, toggleTheme }) {
               scrollToSection('hero');
             }}
           >
-            <div className="avatar-circle" style={{ width: '36px', height: '36px', fontSize: '0.85rem' }}>AI</div>
-            <span>Antigravity Workshop</span>
-            <span className="brand-badge">2-Day</span>
+            <div className="avatar-circle" style={{ width: '36px', height: '36px', fontSize: '0.82rem' }}>AV</div>
+            <span>AGENTVERSE AI</span>
+            <span className="brand-badge">PORTAL</span>
           </a>
 
           {/* DESKTOP NAV LINKS */}
@@ -94,7 +96,7 @@ export default function Navbar({ theme, toggleTheme }) {
                     className={`nav-btn ${isActive ? 'active' : ''}`}
                     onClick={() => scrollToSection(item.id)}
                   >
-                    <Icon size={16} color={isActive ? 'var(--accent-blue)' : 'currentColor'} />
+                    <Icon size={15} color={isActive ? 'var(--accent-blue)' : 'currentColor'} />
                     <span>{item.label}</span>
                   </button>
                 </li>
