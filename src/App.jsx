@@ -11,8 +11,9 @@ import Resources from './components/Resources';
 import Footer from './components/Footer';
 
 export default function App() {
+  // Default to light mode as requested
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('workshop_theme') || 'dark';
+    return localStorage.getItem('workshop_theme') || 'light';
   });
 
   const [activeSection, setActiveSection] = useState('all');
@@ -23,12 +24,15 @@ export default function App() {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
   return (
     <div className="app-layout">
+      {/* Dynamic Animated Glowing Meshes */}
       <div className="ambient-glow" />
+      <div className="ambient-glow-secondary" />
+
       <Navbar
         activeSection={activeSection}
         setActiveSection={setActiveSection}

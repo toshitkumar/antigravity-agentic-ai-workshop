@@ -50,7 +50,7 @@ export default function GraderRubric() {
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '24px' }}>
+      <div className="rubric-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '24px' }}>
         {/* CRITERIA TABLE */}
         <div className="bug-col">
           <div style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
