@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import AgentChat from './components/AgentChat';
 import DemoSuite from './components/DemoSuite';
 import AgentSimulator from './components/AgentSimulator';
 import PromptBuilder from './components/PromptBuilder';
@@ -40,7 +41,10 @@ export default function App() {
         {/* 01. Minimalist Landing Hero */}
         <Hero />
 
-        {/* 02. The Best Live Demo Suite (4 Interactive Demos) */}
+        {/* 02. 🤖 LIVE AGENT DEMO — Talk to the Agent */}
+        <AgentChat />
+
+        {/* 03. The Best Live Demo Suite (4 Interactive Demos) */}
         <DemoSuite />
 
         {/* 03. Agent Workflow Simulator */}
