@@ -11,12 +11,10 @@ import Resources from './components/Resources';
 import Footer from './components/Footer';
 
 export default function App() {
-  // Default to light mode as requested
+  // Default to light theme
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('workshop_theme') || 'light';
   });
-
-  const [activeSection, setActiveSection] = useState('all');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -34,51 +32,18 @@ export default function App() {
       <div className="ambient-glow-secondary" />
 
       <Navbar
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
         theme={theme}
         toggleTheme={toggleTheme}
       />
 
       <main>
-        <Hero setActiveSection={setActiveSection} />
-
-        {(activeSection === 'all' || activeSection === 'schedule') && (
-          <div id="schedule">
-            <ScheduleView />
-          </div>
-        )}
-
-        {(activeSection === 'all' || activeSection === 'prompts') && (
-          <div id="prompts">
-            <PromptHub />
-          </div>
-        )}
-
-        {(activeSection === 'all' || activeSection === 'preview') && (
-          <div id="preview">
-            <LiveHubPreview />
-          </div>
-        )}
-
-        {(activeSection === 'all' || activeSection === 'bughunter') && (
-          <div id="bughunter">
-            <BugHunter />
-          </div>
-        )}
-
-        {(activeSection === 'all' || activeSection === 'grader') && (
-          <div id="grader">
-            <GraderRubric />
-          </div>
-        )}
-
-        {(activeSection === 'all' || activeSection === 'deploy') && (
-          <div id="deploy">
-            <GitHubDeployGuide />
-          </div>
-        )}
-
+        <Hero />
+        <ScheduleView />
+        <PromptHub />
+        <LiveHubPreview />
+        <BugHunter />
+        <GraderRubric />
+        <GitHubDeployGuide />
         <Resources />
       </main>
 

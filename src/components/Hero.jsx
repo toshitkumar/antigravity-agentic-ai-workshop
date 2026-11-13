@@ -1,11 +1,20 @@
 import React from 'react';
+import { ZapIcon, RocketIcon, GithubIcon, SparklesIcon } from './Icons';
 
-export default function Hero({ setActiveSection }) {
+export default function Hero() {
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="hero" id="hero">
       <div className="container">
         <div className="hero-pill">
-          <span>✨ Student Edition</span>
+          <SparklesIcon size={14} color="var(--accent-blue)" />
+          <span>Student Edition</span>
           <span>•</span>
           <span>Beginner to Advanced</span>
           <span>•</span>
@@ -30,15 +39,26 @@ export default function Hero({ setActiveSection }) {
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '32px' }}>
-          <button className="action-btn" onClick={() => setActiveSection('prompts')}>
-            ⚡ View Master Prompts
+        <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '36px' }}>
+          <button className="action-btn" onClick={() => scrollTo('prompts')}>
+            <ZapIcon size={18} color="#ffffff" />
+            <span>View Master Prompts</span>
           </button>
-          <button className="action-btn" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)', color: 'var(--text-primary)' }} onClick={() => setActiveSection('preview')}>
-            🚀 Test Live Capstone App
+          <button
+            className="action-btn"
+            style={{ background: 'var(--bg-card)', border: '1.5px solid var(--border-color)', color: 'var(--text-primary)' }}
+            onClick={() => scrollTo('preview')}
+          >
+            <RocketIcon size={18} color="var(--accent-blue)" />
+            <span>Test Live Capstone App</span>
           </button>
-          <button className="action-btn" style={{ background: 'rgba(16, 185, 129, 0.2)', color: 'var(--accent-emerald)', border: '1px solid rgba(16, 185, 129, 0.4)' }} onClick={() => setActiveSection('deploy')}>
-            🐙 Deploy to GitHub
+          <button
+            className="action-btn"
+            style={{ background: 'rgba(5, 150, 105, 0.1)', color: 'var(--accent-emerald)', border: '1.5px solid rgba(5, 150, 105, 0.3)' }}
+            onClick={() => scrollTo('deploy')}
+          >
+            <GithubIcon size={18} color="var(--accent-emerald)" />
+            <span>Deploy to GitHub</span>
           </button>
         </div>
 

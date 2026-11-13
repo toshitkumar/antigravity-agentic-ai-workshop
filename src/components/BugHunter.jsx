@@ -36,7 +36,7 @@ export default function BugHunter() {
   ];
 
   return (
-    <section className="container" style={{ padding: '60px 24px' }}>
+    <section className="container section-anchor" id="bughunter" style={{ padding: '60px 20px' }}>
       <div className="section-header">
         <span className="section-tag">Day 2 Practical Activity 3</span>
         <h2 className="section-title">🐛 "Find the Bug" Debugging Sandbox</h2>

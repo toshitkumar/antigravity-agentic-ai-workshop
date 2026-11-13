@@ -75,6 +75,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.section-anchor {
+  scroll-margin-top: 85px;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);

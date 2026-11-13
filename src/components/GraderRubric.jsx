@@ -41,7 +41,7 @@ export default function GraderRubric() {
   }
 
   return (
-    <section className="container" style={{ padding: '60px 24px' }}>
+    <section className="container section-anchor" id="grader" style={{ padding: '60px 20px' }}>
       <div className="section-header">
         <span className="section-tag">Evaluation Tool</span>
         <h2 className="section-title">📊 100-Mark Capstone Grading Calculator</h2>

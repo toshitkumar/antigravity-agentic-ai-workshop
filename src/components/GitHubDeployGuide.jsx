@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GithubIcon, CopyIcon, CheckIcon } from './Icons';
 
 export default function GitHubDeployGuide() {
   const [repoName, setRepoName] = useState('agentic-ai-antigravity-workshop');
@@ -30,10 +31,10 @@ npm run build`;
   };
 
   return (
-    <section className="container" style={{ padding: '60px 24px' }}>
+    <section className="container section-anchor" id="deploy" style={{ padding: '60px 20px' }}>
       <div className="section-header">
         <span className="section-tag">Deployment & Hosting</span>
-        <h2 className="section-title">🐙 Launch on GitHub</h2>
+        <h2 className="section-title">Launch on GitHub</h2>
         <p className="section-desc">
           Ready-to-run setup to push this interactive React workshop platform to GitHub under <strong>Kumartoshit82@gmail.com</strong>.
         </p>
@@ -41,10 +42,10 @@ npm run build`;
 
       <div className="bug-sandbox">
         <div className="bug-col">
-          <h3 style={{ fontSize: '1.15rem', marginBottom: '14px', color: 'var(--text-primary)' }}>
-            ⚙️ Step-by-Step GitHub Launch Steps
+          <h3 style={{ fontSize: '1.15rem', marginBottom: '16px', color: 'var(--text-primary)', fontWeight: 800 }}>
+            Step-by-Step GitHub Launch Steps
           </h3>
-          <ol style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '14px', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+          <ol style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '14px', color: 'var(--text-secondary)', fontSize: '0.92rem' }}>
             <li>
               <strong>Configure Git Identity:</strong> Link your commits to your email <code>Kumartoshit82@gmail.com</code> and name <code>Toshit Kumar</code>.
             </li>
@@ -60,7 +61,7 @@ npm run build`;
           </ol>
 
           <div style={{ marginTop: '24px' }}>
-            <label style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>GitHub Repository Name:</label>
+            <label style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 600 }}>GitHub Repository Name:</label>
             <input
               type="text"
               className="custom-input"
@@ -73,10 +74,23 @@ npm run build`;
 
         <div className="bug-col" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-              <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.9rem' }}>Terminal Commands (PowerShell / Bash)</strong>
-              <button className="copy-btn" onClick={copyCode}>
-                {copied ? '✓ Copied Commands!' : '📋 Copy All Commands'}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <GithubIcon size={18} color="var(--accent-blue)" />
+                <strong style={{ color: 'var(--text-primary)', fontSize: '0.92rem' }}>Terminal Commands (PowerShell / Bash)</strong>
+              </div>
+              <button className="copy-btn" onClick={copyCode} style={{ padding: '6px 14px', fontSize: '0.82rem' }}>
+                {copied ? (
+                  <>
+                    <CheckIcon size={14} />
+                    <span>Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <CopyIcon size={14} />
+                    <span>Copy Commands</span>
+                  </>
+                )}
               </button>
             </div>
             <div className="code-container" style={{ maxHeight: '360px', fontSize: '0.82rem' }}>
@@ -84,12 +98,12 @@ npm run build`;
             </div>
           </div>
 
-          <div style={{ background: 'rgba(59,130,246,0.1)', padding: '14px', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(59,130,246,0.2)', marginTop: '16px' }}>
-            <div style={{ fontWeight: 600, color: 'var(--accent-blue)', fontSize: '0.85rem' }}>🚀 Student Distribution URL:</div>
-            <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
+          <div style={{ background: 'var(--gradient-accent-soft)', padding: '16px', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--border-color)', marginTop: '16px' }}>
+            <div style={{ fontWeight: 700, color: 'var(--accent-blue)', fontSize: '0.88rem' }}>Student Distribution URL:</div>
+            <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
               Once pushed, students can clone with:
               <br />
-              <code style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent-emerald)' }}>
+              <code style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent-emerald)', fontWeight: 600 }}>
                 git clone https://github.com/toshitkumar/{repoName}.git
               </code>
             </div>

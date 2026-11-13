@@ -163,7 +163,7 @@ export default function LiveHubPreview() {
   const progressPercent = tasks.length > 0 ? Math.round((completedCount / tasks.length) * 100) : 0;
 
   return (
-    <section className="container" style={{ padding: '60px 24px' }}>
+    <section className="container section-anchor" id="preview" style={{ padding: '60px 20px' }}>
       <div className="section-header">
         <span className="section-tag">Interactive Simulation</span>
         <h2 className="section-title">Live Preview: Student Innovation Hub</h2>

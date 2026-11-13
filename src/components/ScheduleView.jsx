@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CalendarIcon, SparklesIcon, RocketIcon } from './Icons';
 
 export default function ScheduleView() {
   const [activeDay, setActiveDay] = useState(1);
@@ -36,7 +37,7 @@ export default function ScheduleView() {
   const currentList = activeDay === 1 ? day1Sessions : day2Sessions;
 
   return (
-    <section className="container" style={{ padding: '60px 24px' }}>
+    <section className="container section-anchor" id="schedule" style={{ padding: '60px 20px' }}>
       <div className="section-header">
         <span className="section-tag">Interactive Timeline</span>
         <h2 className="section-title">2-Day Workshop Roadmap</h2>
@@ -52,9 +53,9 @@ export default function ScheduleView() {
         >
           <div>
             <strong>DAY 01: Understand & Build</strong>
-            <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Fundamentals, AI Agents & First Website</div>
+            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '4px' }}>Fundamentals, AI Agents & First Website</div>
           </div>
-          <span style={{ fontSize: '1.4rem' }}>🌱</span>
+          <SparklesIcon size={22} color="var(--accent-blue)" />
         </button>
 
         <button
@@ -63,16 +64,19 @@ export default function ScheduleView() {
         >
           <div>
             <strong>DAY 02: Automate & Deploy</strong>
-            <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Advanced Interactions, Testing & Capstone</div>
+            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '4px' }}>Advanced Interactions, Testing & Capstone</div>
           </div>
-          <span style={{ fontSize: '1.4rem' }}>🚀</span>
+          <RocketIcon size={22} color="var(--accent-purple)" />
         </button>
       </div>
 
       <div className="timeline-list">
         {currentList.map((item, idx) => (
           <div key={idx} className="timeline-card">
-            <span className="time-badge">{item.time}</span>
+            <span className="time-badge">
+              <CalendarIcon size={14} color="var(--accent-blue)" />
+              {item.time}
+            </span>
             <span className="session-name">{item.session}</span>
             <span className="activity-badge">{item.activity}</span>
           </div>

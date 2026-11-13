@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CopyIcon, CheckIcon, ZapIcon, SparklesIcon } from './Icons';
 
 export default function PromptHub() {
   const [copiedKey, setCopiedKey] = useState(null);
@@ -83,7 +84,7 @@ Showcase a student developer's biography, technical skills, academic projects, a
   ];
 
   return (
-    <section className="container" style={{ padding: '60px 24px' }}>
+    <section className="container section-anchor" id="prompts" style={{ padding: '60px 20px' }}>
       <div className="section-header">
         <span className="section-tag">Prompt Engineering Center</span>
         <h2 className="section-title">The 7-Part Master Prompt Library</h2>
@@ -93,7 +94,9 @@ Showcase a student developer's biography, technical skills, academic projects, a
       </div>
 
       {/* 7-PART FRAMEWORK BREAKDOWN */}
-      <h3 style={{ fontSize: '1.25rem', marginBottom: '16px' }}>📐 The 7-Part Prompt Architecture</h3>
+      <h3 style={{ fontSize: '1.25rem', marginBottom: '18px', fontWeight: 800 }}>
+        The 7-Part Prompt Architecture
+      </h3>
       <div className="prompt-framework-grid" style={{ marginBottom: '40px' }}>
         {[
           { num: '01', title: 'Role', desc: 'Who the agent acts as (e.g. Senior Frontend Engineer)' },
@@ -117,12 +120,12 @@ Showcase a student developer's biography, technical skills, academic projects, a
         <div className="prompt-card">
           <div className="prompt-header">
             <div className="prompt-title-group">
-              <span style={{ fontSize: '1.3rem' }}>🏆</span>
+              <ZapIcon size={22} color="var(--accent-blue)" />
               <div>
-                <strong style={{ fontSize: '1.05rem', color: 'var(--text-primary)' }}>
+                <strong style={{ fontSize: '1.1rem', color: 'var(--text-primary)' }}>
                   Day 2 Capstone: Student Innovation Hub
                 </strong>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Complete 6-module educational platform</div>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Complete 6-module educational platform</div>
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -131,7 +134,17 @@ Showcase a student developer's biography, technical skills, academic projects, a
                 className={`copy-btn ${copiedKey === 'master' ? 'copied' : ''}`}
                 onClick={() => copyToClipboard(masterPrompt, 'master')}
               >
-                {copiedKey === 'master' ? '✓ Copied!' : '📋 Copy Prompt'}
+                {copiedKey === 'master' ? (
+                  <>
+                    <CheckIcon size={16} />
+                    <span>Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <CopyIcon size={16} />
+                    <span>Copy Prompt</span>
+                  </>
+                )}
               </button>
             </div>
           </div>
@@ -142,21 +155,33 @@ Showcase a student developer's biography, technical skills, academic projects, a
         <div className="prompt-card">
           <div className="prompt-header">
             <div className="prompt-title-group">
-              <span style={{ fontSize: '1.3rem' }}>🌱</span>
+              <SparklesIcon size={22} color="var(--accent-cyan)" />
               <div>
-                <strong style={{ fontSize: '1.05rem', color: 'var(--text-primary)' }}>
+                <strong style={{ fontSize: '1.1rem', color: 'var(--text-primary)' }}>
                   Day 1 Warm-up: Student Portfolio Website
                 </strong>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Foundational responsive portfolio</div>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>Foundational responsive portfolio</div>
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <span className="prompt-badge" style={{ background: 'rgba(59, 130, 246, 0.15)', color: 'var(--accent-blue)', borderColor: 'rgba(59, 130, 246, 0.3)' }}>Day 1 Challenge</span>
+              <span className="prompt-badge" style={{ background: 'rgba(37, 99, 235, 0.12)', color: 'var(--accent-blue)', borderColor: 'rgba(37, 99, 235, 0.25)' }}>
+                Day 1 Challenge
+              </span>
               <button
                 className={`copy-btn ${copiedKey === 'portfolio' ? 'copied' : ''}`}
                 onClick={() => copyToClipboard(portfolioPrompt, 'portfolio')}
               >
-                {copiedKey === 'portfolio' ? '✓ Copied!' : '📋 Copy Prompt'}
+                {copiedKey === 'portfolio' ? (
+                  <>
+                    <CheckIcon size={16} />
+                    <span>Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <CopyIcon size={16} />
+                    <span>Copy Prompt</span>
+                  </>
+                )}
               </button>
             </div>
           </div>
@@ -165,22 +190,34 @@ Showcase a student developer's biography, technical skills, academic projects, a
       </div>
 
       {/* QUICK PROMPTS FOR REFINEMENT */}
-      <h3 style={{ fontSize: '1.25rem', margin: '40px 0 16px' }}>⚡ 6 Refinement & Extension Prompts</h3>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+      <h3 style={{ fontSize: '1.25rem', margin: '40px 0 18px', fontWeight: 800 }}>
+        6 Refinement & Extension Prompts
+      </h3>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '18px' }}>
         {quickPrompts.map((qp, i) => (
           <div key={i} className="framework-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
-              <strong style={{ color: 'var(--accent-cyan)' }}>{qp.title}</strong>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '6px', fontStyle: 'italic' }}>
+              <strong style={{ color: 'var(--accent-blue)', fontSize: '0.95rem' }}>{qp.title}</strong>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginTop: '8px', lineHeight: 1.5 }}>
                 "{qp.prompt}"
               </p>
             </div>
             <button
               className="copy-btn"
-              style={{ marginTop: '14px', alignSelf: 'flex-start', padding: '6px 12px', fontSize: '0.78rem' }}
+              style={{ marginTop: '16px', alignSelf: 'flex-start', padding: '8px 14px', fontSize: '0.82rem' }}
               onClick={() => copyToClipboard(qp.prompt, `qp-${i}`)}
             >
-              {copiedKey === `qp-${i}` ? '✓ Copied!' : 'Copy Snippet'}
+              {copiedKey === `qp-${i}` ? (
+                <>
+                  <CheckIcon size={14} />
+                  <span>Copied!</span>
+                </>
+              ) : (
+                <>
+                  <CopyIcon size={14} />
+                  <span>Copy Snippet</span>
+                </>
+              )}
             </button>
           </div>
         ))}
