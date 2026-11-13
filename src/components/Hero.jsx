@@ -1,5 +1,5 @@
 import React from 'react';
-import { ZapIcon, RocketIcon, GithubIcon, SparklesIcon } from './Icons';
+import { RocketIcon, CalendarIcon, SparklesIcon } from './Icons';
 
 export default function Hero() {
   const scrollTo = (id) => {
@@ -9,113 +9,64 @@ export default function Hero() {
     }
   };
 
-  const journeySteps = [
-    { num: '01', title: 'UNDERSTAND AI', desc: 'AI, ML & Generative Models' },
-    { num: '02', title: 'THINK AGENTIC', desc: 'Planning, Tools & Reasoning' },
-    { num: '03', title: 'MASTER ANTIGRAVITY', desc: 'Agent Manager & Workspaces' },
-    { num: '04', title: 'BUILD APPLICATIONS', desc: 'Portfolio & Capstone Hub' },
-    { num: '05', title: 'TEST & INNOVATE', desc: 'Self-Healing & Hackathon' },
-  ];
-
   return (
-    <section className="hero" id="hero">
-      <div className="container">
-        <div className="hero-pill">
+    <section className="hero" id="hero" style={{ padding: '60px 20px 40px' }}>
+      <div className="container" style={{ maxWidth: '880px' }}>
+        {/* MINIMAL BRAND PILL */}
+        <div className="hero-pill" style={{ marginBottom: '20px' }}>
           <SparklesIcon size={14} color="var(--accent-blue)" />
           <span>AGENTVERSE AI</span>
           <span>•</span>
-          <span>Next-Gen Agentic AI Learning & Training Portal</span>
+          <span>By Toshit Kumar</span>
         </div>
 
-        <h1 className="hero-title">
-          The Future of Building <br />
-          <span>with AI Agents</span>
+        {/* ULTRA-MINIMAL DISPLAY TITLE */}
+        <h1 className="hero-title" style={{ fontSize: '4rem', fontWeight: 900, letterSpacing: '-0.04em', lineHeight: 1.08, marginBottom: '18px' }}>
+          Build with <br />
+          <span>AI Agents.</span>
         </h1>
 
-        <p className="hero-subtitle">
-          Learn Agentic AI. Master Google Antigravity. Build the Future. <br />
-          A complete hands-on journey from AI fundamentals to autonomous web development, guided by instructor <strong>Toshit Kumar</strong>.
+        {/* CRISP SUBHEAD */}
+        <p className="hero-subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '640px', margin: '0 auto 28px', lineHeight: 1.5 }}>
+          The next-generation hands-on learning portal for <strong>Google Antigravity</strong> and <strong>Agentic AI</strong>.
         </p>
 
-        <div className="hero-instructor-card">
-          <div className="avatar-circle">TK</div>
-          <div className="instructor-meta">
-            <div className="instructor-name">Instructor & Creator: Toshit Kumar</div>
-            <div className="instructor-sub">Google Antigravity Specialist • Full-Stack Agentic AI Architect</div>
-          </div>
+        {/* INSTRUCTOR CHIP */}
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'var(--bg-card)', border: '1px solid var(--border-color)', padding: '6px 16px', borderRadius: 'var(--radius-full)', marginBottom: '32px', boxShadow: 'var(--shadow-sm)' }}>
+          <div className="avatar-circle" style={{ width: '28px', height: '28px', fontSize: '0.78rem' }}>TK</div>
+          <span style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)' }}>Instructor: Toshit Kumar</span>
+          <span style={{ fontSize: '0.78rem', color: 'var(--accent-blue)', fontWeight: 600 }}>• Kumartoshit82@gmail.com</span>
         </div>
 
-        <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '40px' }}>
-          <button className="action-btn" onClick={() => scrollTo('simulator')}>
+        {/* ACTION BUTTONS */}
+        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '40px' }}>
+          <button className="action-btn" onClick={() => scrollTo('demo-suite')} style={{ padding: '14px 30px', fontSize: '1rem' }}>
             <RocketIcon size={18} color="#ffffff" />
-            <span>Launch Agent Simulator</span>
+            <span>Try Interactive Demos</span>
           </button>
           <button
             className="action-btn"
-            style={{ background: 'var(--bg-card)', border: '1.5px solid var(--border-color)', color: 'var(--text-primary)' }}
-            onClick={() => scrollTo('promptbuilder')}
+            style={{ background: 'var(--bg-card)', border: '1.5px solid var(--border-color)', color: 'var(--text-primary)', padding: '14px 26px', fontSize: '1rem' }}
+            onClick={() => scrollTo('schedule')}
           >
-            <ZapIcon size={18} color="var(--accent-blue)" />
-            <span>Open Prompt Playground</span>
-          </button>
-          <button
-            className="action-btn"
-            style={{ background: 'rgba(5, 150, 105, 0.1)', color: 'var(--accent-emerald)', border: '1.5px solid rgba(5, 150, 105, 0.3)' }}
-            onClick={() => scrollTo('preview')}
-          >
-            <SparklesIcon size={18} color="var(--accent-emerald)" />
-            <span>Test Capstone App</span>
+            <CalendarIcon size={18} color="var(--accent-blue)" />
+            <span>2-Day Curriculum</span>
           </button>
         </div>
 
-        {/* 5-STEP LEARNING JOURNEY BAR */}
-        <div style={{ marginBottom: '45px' }}>
-          <div style={{ fontSize: '0.82rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--accent-blue)', letterSpacing: '1px', marginBottom: '14px' }}>
-            5-Stage Student Mastery Roadmap
+        {/* MINIMAL 3-METRIC STRIP */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '32px', flexWrap: 'wrap', borderTop: '1px solid var(--border-color)', paddingTop: '28px' }}>
+          <div>
+            <div style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--accent-blue)', lineHeight: 1 }}>2 Days</div>
+            <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 600, marginTop: '4px' }}>Hands-on Learning</div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-            {journeySteps.map((step, idx) => (
-              <div
-                key={idx}
-                style={{
-                  background: 'var(--bg-card)',
-                  border: '1px solid var(--border-color)',
-                  borderRadius: 'var(--radius-sm)',
-                  padding: '14px 16px',
-                  textAlign: 'left',
-                  boxShadow: 'var(--shadow-sm)',
-                }}
-              >
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', fontWeight: 800, color: 'var(--accent-purple)' }}>
-                  {step.num}
-                </div>
-                <div style={{ fontWeight: 800, fontSize: '0.88rem', color: 'var(--text-primary)', marginTop: '2px' }}>
-                  {step.title}
-                </div>
-                <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)', marginTop: '2px' }}>
-                  {step.desc}
-                </div>
-              </div>
-            ))}
+          <div style={{ borderLeft: '1px solid var(--border-color)', paddingLeft: '32px' }}>
+            <div style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--accent-purple)', lineHeight: 1 }}>4 Live Demos</div>
+            <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 600, marginTop: '4px' }}>Interactive Lab Suite</div>
           </div>
-        </div>
-
-        <div className="hero-metrics">
-          <div className="metric-card">
-            <div className="metric-val">2</div>
-            <div className="metric-label">Intensive Days</div>
-          </div>
-          <div className="metric-card">
-            <div className="metric-val">5</div>
-            <div className="metric-label">Interactive AI Labs</div>
-          </div>
-          <div className="metric-card">
-            <div className="metric-val">2</div>
-            <div className="metric-label">Full Web Applications</div>
-          </div>
-          <div className="metric-card">
-            <div className="metric-val">100</div>
-            <div className="metric-label">Hackathon Rubric Marks</div>
+          <div style={{ borderLeft: '1px solid var(--border-color)', paddingLeft: '32px' }}>
+            <div style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--accent-emerald)', lineHeight: 1 }}>100 Marks</div>
+            <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 600, marginTop: '4px' }}>Hackathon Project</div>
           </div>
         </div>
       </div>

@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import AgenticConcepts from './components/AgenticConcepts';
+import DemoSuite from './components/DemoSuite';
 import AgentSimulator from './components/AgentSimulator';
 import PromptBuilder from './components/PromptBuilder';
 import ScheduleView from './components/ScheduleView';
 import PromptHub from './components/PromptHub';
-import LiveHubPreview from './components/LiveHubPreview';
-import BugHunter from './components/BugHunter';
 import GraderRubric from './components/GraderRubric';
 import GitHubDeployGuide from './components/GitHubDeployGuide';
 import Resources from './components/Resources';
 import Footer from './components/Footer';
 
 export default function App() {
-  // Default to light theme
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('workshop_theme') || 'light';
   });
@@ -40,41 +37,35 @@ export default function App() {
       />
 
       <main>
-        {/* 01. Landing Hero with 5-Stage Mastery Roadmap */}
+        {/* 01. Minimalist Landing Hero */}
         <Hero />
 
-        {/* 02. Introduction to Agentic AI Architecture & 5 Pillars */}
-        <AgenticConcepts />
+        {/* 02. The Best Live Demo Suite (4 Interactive Demos) */}
+        <DemoSuite />
 
-        {/* 03. Interactive AI Lab 01: Agent Workflow Simulator */}
+        {/* 03. Agent Workflow Simulator */}
         <AgentSimulator />
 
-        {/* 04. Interactive AI Lab 02: Visual Prompt Engineering Playground */}
+        {/* 04. Visual Prompt Engineering Playground */}
         <PromptBuilder />
 
-        {/* 05. Two-Day Learning Modules */}
+        {/* 05. 2-Day Workshop Curriculum */}
         <ScheduleView />
 
-        {/* 06. Master Development Prompts (Antigravity Capstone & Portfolio) */}
+        {/* 06. Master Development Prompts (Capstone & Portfolio) */}
         <PromptHub />
 
-        {/* 07. Interactive AI Lab 03: Live Student Innovation Hub Preview */}
-        <LiveHubPreview />
-
-        {/* 08. Interactive AI Lab 04: AI Debugging Sandbox ("Find the Bug") */}
-        <BugHunter />
-
-        {/* 09. Interactive AI Lab 05: Final AI Hackathon 100-Mark Rubric */}
+        {/* 07. Final Hackathon 100-Mark Rubric */}
         <GraderRubric />
 
-        {/* 10. Launch & Deployment on GitHub */}
+        {/* 08. GitHub Launch Guide */}
         <GitHubDeployGuide />
 
-        {/* 11. Official Google Antigravity Resources & Codelabs */}
+        {/* 09. Official Resources */}
         <Resources />
       </main>
 
-      {/* 12. Footer with Toshit Kumar Branding */}
+      {/* 10. Minimalist Footer */}
       <Footer />
     </div>
   );

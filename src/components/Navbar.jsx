@@ -19,14 +19,12 @@ export default function Navbar({ theme, toggleTheme }) {
   const [activeSection, setActiveSection] = useState('hero');
 
   const navItems = [
-    { id: 'concepts', label: 'Architecture', Icon: SparklesIcon },
-    { id: 'simulator', label: 'Simulator', Icon: RocketIcon },
+    { id: 'demo-suite', label: 'Live Demos', Icon: RocketIcon },
+    { id: 'simulator', label: 'Agent Simulator', Icon: SparklesIcon },
     { id: 'promptbuilder', label: 'Prompt Lab', Icon: ZapIcon },
-    { id: 'schedule', label: '2-Day Modules', Icon: CalendarIcon },
-    { id: 'preview', label: 'Live Capstone', Icon: SparklesIcon },
-    { id: 'bughunter', label: 'Debugging', Icon: BugIcon },
+    { id: 'schedule', label: '2-Day Agenda', Icon: CalendarIcon },
     { id: 'grader', label: 'Hackathon Rubric', Icon: ChartIcon },
-    { id: 'deploy', label: 'GitHub Deploy', Icon: GithubIcon },
+    { id: 'deploy', label: 'GitHub Launch', Icon: GithubIcon },
   ];
 
   const scrollToSection = (id) => {
