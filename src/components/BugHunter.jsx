@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BugIcon, CheckIcon, ZapIcon, AlertIcon } from './Icons';
 
 export default function BugHunter() {
   const [showSolution, setShowSolution] = useState(false);
@@ -39,7 +40,7 @@ export default function BugHunter() {
     <section className="container section-anchor" id="bughunter" style={{ padding: '60px 20px' }}>
       <div className="section-header">
         <span className="section-tag">Day 2 Practical Activity 3</span>
-        <h2 className="section-title">🐛 "Find the Bug" Debugging Sandbox</h2>
+        <h2 className="section-title">"Find the Bug" Debugging Sandbox</h2>
         <p className="section-desc">
           Teach students how to inspect console errors, identify state serialization issues, and instruct Google Antigravity to repair broken code.
         </p>
@@ -48,14 +49,17 @@ export default function BugHunter() {
       <div className="bug-sandbox">
         {/* LEFT COLUMN: THE BUGGY CODE */}
         <div className="bug-col">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-            <strong style={{ color: 'var(--accent-rose)' }}>⚠️ Flawed Code Specimen</strong>
-            <span style={{ fontSize: '0.75rem', background: 'rgba(244,63,94,0.15)', color: 'var(--accent-rose)', padding: '2px 8px', borderRadius: 'var(--radius-full)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <AlertIcon size={18} color="var(--accent-rose)" />
+              <strong style={{ color: 'var(--accent-rose)', fontSize: '0.96rem' }}>Flawed Code Specimen</strong>
+            </div>
+            <span style={{ fontSize: '0.78rem', background: 'rgba(225, 29, 72, 0.14)', color: 'var(--accent-rose)', padding: '3px 10px', borderRadius: 'var(--radius-full)', fontWeight: 800 }}>
               4 Intentional Bugs
             </span>
           </div>
 
-          <div className="code-container" style={{ maxHeight: '380px', fontSize: '0.82rem' }}>
+          <div className="code-container" style={{ maxHeight: '380px', fontSize: '0.84rem' }}>
 {`// task-tracker.html (Buggy Snippet)
 <style>
   /* BUG 1: Button moved off-screen! */
@@ -82,21 +86,21 @@ export default function BugHunter() {
 </script>`}
           </div>
 
-          <div style={{ marginTop: '20px' }}>
-            <h4 style={{ fontSize: '0.95rem', marginBottom: '10px' }}>🔍 Guided Diagnostic Clues:</h4>
+          <div style={{ marginTop: '22px' }}>
+            <h4 style={{ fontSize: '0.98rem', marginBottom: '12px', fontWeight: 800 }}>Guided Diagnostic Clues:</h4>
             {bugs.map((b) => (
-              <div key={b.id} style={{ marginBottom: '10px', background: 'var(--bg-secondary)', padding: '10px 14px', borderRadius: 'var(--radius-sm)' }}>
+              <div key={b.id} style={{ marginBottom: '10px', background: 'var(--bg-primary)', border: '1px solid var(--border-color)', padding: '12px 16px', borderRadius: 'var(--radius-sm)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>{b.title}</span>
+                  <span style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)' }}>{b.title}</span>
                   <button
                     onClick={() => toggleHint(b.id)}
-                    style={{ background: 'transparent', border: 'none', color: 'var(--accent-blue)', cursor: 'pointer', fontSize: '0.8rem' }}
+                    style={{ background: 'transparent', border: 'none', color: 'var(--accent-blue)', cursor: 'pointer', fontSize: '0.82rem', fontWeight: 700 }}
                   >
-                    {revealedHints[b.id] ? 'Hide' : 'Reveal Clue'}
+                    {revealedHints[b.id] ? 'Hide Clue' : 'Reveal Clue'}
                   </button>
                 </div>
                 {revealedHints[b.id] && (
-                  <p style={{ fontSize: '0.8rem', color: 'var(--accent-amber)', marginTop: '6px' }}>
+                  <p style={{ fontSize: '0.84rem', color: 'var(--accent-amber)', marginTop: '8px', lineHeight: 1.5 }}>
                     💡 <em>{b.clue}</em>
                   </p>
                 )}
@@ -107,11 +111,14 @@ export default function BugHunter() {
 
         {/* RIGHT COLUMN: AI-ASSISTED SOLUTION */}
         <div className="bug-col">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-            <strong style={{ color: 'var(--accent-emerald)' }}>✅ Self-Healed Solution</strong>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <CheckIcon size={18} color="var(--accent-emerald)" />
+              <strong style={{ color: 'var(--accent-emerald)', fontSize: '0.96rem' }}>Self-Healed Solution</strong>
+            </div>
             <button
               className="action-btn"
-              style={{ padding: '6px 14px', fontSize: '0.8rem', background: showSolution ? 'var(--accent-emerald)' : 'var(--accent-blue)' }}
+              style={{ padding: '8px 16px', fontSize: '0.84rem', background: showSolution ? 'var(--accent-emerald)' : 'var(--accent-blue)' }}
               onClick={() => setShowSolution(!showSolution)}
             >
               {showSolution ? 'Hide Solution' : 'Reveal Healed Code'}
@@ -120,7 +127,7 @@ export default function BugHunter() {
 
           {showSolution ? (
             <div>
-              <div className="code-container" style={{ maxHeight: '380px', fontSize: '0.82rem' }}>
+              <div className="code-container" style={{ maxHeight: '380px', fontSize: '0.84rem' }}>
 {`// task-tracker.html (Healed Code)
 <style>
   /* Fixed Bug 1: Visible, responsive styling */
@@ -158,18 +165,20 @@ export default function BugHunter() {
 </script>`}
               </div>
 
-              <div style={{ marginTop: '16px', background: 'rgba(16,185,129,0.1)', padding: '14px', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(16,185,129,0.2)' }}>
-                <strong style={{ color: 'var(--accent-emerald)', fontSize: '0.88rem' }}>🧠 Key Learning Outcome:</strong>
-                <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
+              <div style={{ marginTop: '18px', background: 'rgba(5, 150, 105, 0.1)', padding: '16px', borderRadius: 'var(--radius-sm)', border: '1.5px solid rgba(5, 150, 105, 0.25)' }}>
+                <strong style={{ color: 'var(--accent-emerald)', fontSize: '0.92rem' }}>Key Learning Outcome:</strong>
+                <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', marginTop: '6px', lineHeight: 1.5 }}>
                   Students witness firsthand that testing and inspecting edge cases (preventing reloads, JSON parsing) are essential steps in prompt-driven development.
                 </p>
               </div>
             </div>
           ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '340px', textAlign: 'center', color: 'var(--text-muted)' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>🔒</div>
-              <p>Give your students 15 minutes to diagnose the bugs first!</p>
-              <button className="action-btn" style={{ marginTop: '16px' }} onClick={() => setShowSolution(true)}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '360px', textAlign: 'center', color: 'var(--text-muted)' }}>
+              <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: 'var(--gradient-accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
+                <BugIcon size={28} color="var(--accent-blue)" />
+              </div>
+              <p style={{ maxWidth: '320px', fontSize: '0.95rem' }}>Give your students 15 minutes to diagnose the bugs first!</p>
+              <button className="action-btn" style={{ marginTop: '18px' }} onClick={() => setShowSolution(true)}>
                 Reveal Solution Now
               </button>
             </div>

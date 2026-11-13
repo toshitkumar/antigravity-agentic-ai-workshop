@@ -1,4 +1,5 @@
 import React from 'react';
+import { ExternalLinkIcon } from './Icons';
 
 export default function Resources() {
   const links = [
@@ -35,16 +36,16 @@ export default function Resources() {
   ];
 
   return (
-    <section className="container" style={{ padding: '60px 24px' }}>
+    <section className="container section-anchor" id="resources" style={{ padding: '60px 20px' }}>
       <div className="section-header">
         <span className="section-tag">Essential Links & Reading</span>
-        <h2 className="section-title">📚 Official Developer Resources</h2>
+        <h2 className="section-title">Official Developer Resources</h2>
         <p className="section-desc">
           Official Google documentation, codelabs, and student reading assignments for the workshop.
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px' }}>
         {links.map((l, i) => (
           <a
             key={i}
@@ -55,13 +56,14 @@ export default function Resources() {
             style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
           >
             <div>
-              <span style={{ fontSize: '0.72rem', background: 'rgba(59,130,246,0.15)', color: 'var(--accent-blue)', padding: '2px 8px', borderRadius: 'var(--radius-full)', fontWeight: 600 }}>
+              <span style={{ fontSize: '0.74rem', background: 'rgba(37, 99, 235, 0.12)', color: 'var(--accent-blue)', padding: '3px 10px', borderRadius: 'var(--radius-full)', fontWeight: 700 }}>
                 {l.tag}
               </span>
-              <div style={{ fontWeight: 700, color: 'var(--text-primary)', marginTop: '8px', fontSize: '1rem' }}>
-                {l.title} ↗
+              <div style={{ fontWeight: 800, color: 'var(--text-primary)', marginTop: '12px', fontSize: '1.05rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span>{l.title}</span>
+                <ExternalLinkIcon size={16} color="var(--accent-blue)" />
               </div>
-              <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '6px' }}>
+              <div style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', marginTop: '8px', lineHeight: 1.5 }}>
                 {l.desc}
               </div>
             </div>
